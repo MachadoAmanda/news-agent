@@ -40,7 +40,7 @@ Log in as:
 Inside n8n:
 
 1. Click **Import Workflow**
-2. Import from url and add the link: `https://raw.githubusercontent.com/MachadoAmanda/news-agent/refs/heads/main/Agent%20-%20Template.json`
+2. Import from url and add the link: `https://raw.githubusercontent.com/MachadoAmanda/news-agent/refs/heads/main/Template%20agent.json`
 3. Confirm the import
 
 *(Follow the same process illustrated in the images)*
