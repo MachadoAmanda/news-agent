@@ -24,20 +24,11 @@ The workflow template already includes:
 
 You only need to import the template and update the email address.
 
-## Requirements
-
-Before starting, ensure you have:
-
-- Access to the n8n environment  
-- The file **`Agent template.json`**
-
-n8n environment used for the demo: `https://n8npub.xptoai.com.br/`.
-
 ---
 
 ## Step 1 — Download the Template
 
-Download the file:
+Download the file: `Agent template.json`
 
 This file contains the **entire pre-configured workflow**, including:
 
