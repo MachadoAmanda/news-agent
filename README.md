@@ -49,12 +49,11 @@ Inside n8n:
 <img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/114eec79-93fa-4b12-a214-a337912e6f52" />
 
 After importing, the workflow will appear with **all nodes already configured**.
+
 **(Change the workflow name adding your name on it)**
 <img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/115a9f4d-80a0-4a53-9d52-a8aa57a40959" />
 
-
-
-## Step 4 — Configure the Email Node
+## Step 3 — Configure the Email Node
 
 Locate the **Email Node** in the workflow.
 <img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/443a010e-9c89-4cd3-9a14-e3883a7afeab" />
@@ -66,7 +65,7 @@ Update the configuration:
 
 No other configuration changes are required.
 
-## Step 5 — Review or Adjust the Agent Prompt (Optional)
+## Step 4 — Review or Adjust the Agent Prompt (Optional)
 
 The **Agent Prompt** is already configured in the template.
 <img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/17130967-201f-450f-851e-47fa70d42768" />
@@ -82,7 +81,7 @@ However, you may adjust it if desired to:
 This step is optional.
 
 
-## Step 6 — Run the Workflow
+## Step 5 — Run the Workflow
 
 Once the email is configured:
 
@@ -90,9 +89,10 @@ Once the email is configured:
 2. Send a message in the chat or into the public chat page (Follow image steps)
 3. Observe the agent using the **email tool to send a message**
 
-### Step 1 - Opening chat node:
+### Step 5.1 - Opening chat node:
 <img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/266debbe-3015-4f3d-b5be-26e62487b9da" />
-### Step 2 - Accessing webpage chat:
+
+### Step 5.2 - Accessing webpage chat:
 <img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/b4b42dfb-212a-4bfb-bc0a-1666ba9bd62d" />
 
 This demonstrates how **AI agents can interact with external tools inside automation workflows**.
