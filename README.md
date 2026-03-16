@@ -82,11 +82,14 @@ This step is optional.
 
 
 ## Step 5 — Run the Workflow
+Publish your agent by following the steps
+<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/f70b719e-61dc-4879-a8e8-1e51322885de" />
+<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/747d7eab-1b0b-42a2-8c15-6c549ca83386" />
 
-Once the email is configured:
+Once the email is configured and the agent is published:
 
 1. Run the workflow
-2. Send a message in the chat or into the public chat page (Follow image steps)
+2. Send a message in the chat or into the public chat webpage (Follow image steps)
 3. Observe the agent using the **email tool to send a message**
 
 ### Step 5.1 - Opening chat node:
