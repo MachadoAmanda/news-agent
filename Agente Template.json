@@ -40,7 +40,7 @@
       "parameters": {
         "model": {
           "__rl": true,
-          "value": "xai.grok-4-fast-non-reasoning",
+          "value": "xai.grok-4-1-fast-non-reasoning",
           "mode": "id"
         },
         "builtInTools": {
