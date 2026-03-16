@@ -44,7 +44,7 @@ Open the n8n instance in your browser: `https://n8npub.xptoai.com.br/`.
 
 Log in as: 
 - Username: `news@xptoai.com.br`
-- Password: `Oracle@2026`
+- Password: `Oracle!2026`
 
 
 ## Step 3 — Import the Workflow
