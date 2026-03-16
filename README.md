@@ -1,4 +1,4 @@
-# AI Agent – Executive Demo Guide
+# AI Agent – Executive workshop guide
 
 This short guide explains how to set up and test the **AI Agent demo** that will be used during our talk with directors.  
 The objective is to demonstrate **how an AI Agent can be created in n8n and use email as a tool**.
