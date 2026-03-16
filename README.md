@@ -26,19 +26,7 @@ You only need to import the template and update the email address.
 
 ---
 
-## Step 1 — Download the Template
-
-Download the file in the following link: [`Agent template.json`](https://raw.githubusercontent.com/MachadoAmanda/news-agent/refs/heads/main/Agent%20-%20Template.json)
-
-This file contains the **entire pre-configured workflow**, including:
-
-- Agent setup
-- Prompt instructions
-- Email tool configuration
-
----
-
-## Step 2 — Access n8n
+## Step 1 — Access n8n
 
 Open the n8n instance in your browser: `https://n8npub.xptoai.com.br/`.
 
@@ -47,22 +35,24 @@ Log in as:
 - Password: `Oracle!2026`
 
 
-## Step 3 — Import the Workflow
+## Step 2 — Import the Workflow
 
 Inside n8n:
 
 1. Click **Import Workflow**
-2. Upload the file **`Agent template.json`**
+2. Import from url and add the link: `https://raw.githubusercontent.com/MachadoAmanda/news-agent/refs/heads/main/Agent%20-%20Template.json`
 3. Confirm the import
 
 *(Follow the same process illustrated in the images)*
-<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/217e9dc3-e66e-41e4-9ac0-d878f7a8abe1" />
-
-<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/e70c600a-db0b-4f94-867f-49c9cc566cb5" />
+<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/161285b9-4df9-436d-9359-b5f03f49c75d" />
+<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/a13b0882-0a16-4b67-8890-c1fc974c4e1b" />
+<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/114eec79-93fa-4b12-a214-a337912e6f52" />
 
 After importing, the workflow will appear with **all nodes already configured**.
+**(Change the workflow name adding your name on it)**
+<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/115a9f4d-80a0-4a53-9d52-a8aa57a40959" />
 
-<img width="800" height="441" alt="image" src="https://github.com/user-attachments/assets/7c8d8cc6-19ef-48e6-840d-1baa73138ee7" />
+
 
 ## Step 4 — Configure the Email Node
 
