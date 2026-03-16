@@ -28,7 +28,7 @@ You only need to import the template and update the email address.
 
 ## Step 1 — Download the Template
 
-Download the file: `Agent template.json`
+Download the file in the following link: [`Agent template.json`](https://raw.githubusercontent.com/MachadoAmanda/news-agent/refs/heads/main/Agent%20-%20Template.json)
 
 This file contains the **entire pre-configured workflow**, including:
 
