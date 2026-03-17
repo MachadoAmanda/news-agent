@@ -1,5 +1,5 @@
 {
-  "name": "News Agent - [your-name-here]",
+  "name": "News Agent - [your name here]",
   "nodes": [
     {
       "parameters": {
@@ -17,7 +17,7 @@
         0,
         144
       ],
-      "id": "1dc5b569-41c5-4fb6-af0f-3a5428b13db5",
+      "id": "731cb705-13c7-47d9-8e80-fc2fd3a6c691",
       "name": "When chat message received",
       "webhookId": "c73bb9e2-fdf6-4d41-bacb-ee57134d71b5"
     },
@@ -33,7 +33,7 @@
         576,
         144
       ],
-      "id": "19cada14-0357-4098-b9e4-6028bd52bf98",
+      "id": "060ef829-7618-45ca-b7f7-153cc1313b3d",
       "name": "AI Agent"
     },
     {
@@ -58,7 +58,7 @@
         448,
         352
       ],
-      "id": "5419c000-3512-4304-8832-d8cbdce99009",
+      "id": "88a14df7-6ff2-441b-8180-e752c692378e",
       "name": "OpenAI Chat Model",
       "credentials": {
         "openAiApi": {
@@ -70,7 +70,7 @@
     {
       "parameters": {
         "sessionIdType": "customKey",
-        "sessionKey": "={{ $if($(\"When chat message received\").isExecuted, $(\"When chat message received\")json.sessionId, $('Schedule Trigger').item.json.timestamp) }}"
+        "sessionKey": "={{ ($if($(\"When chat message received\").isExecuted, $(\"When chat message received\").item.json.sessionId, $('Schedule Trigger').item.json.timestamp)) ||  $now }}"
       },
       "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
       "typeVersion": 1.3,
@@ -78,13 +78,13 @@
         592,
         352
       ],
-      "id": "9a934000-abf8-464d-b076-6b2d1bf515e9",
+      "id": "c460bc83-e2b0-477b-be4f-98c8e6349f9f",
       "name": "Simple Memory"
     },
     {
       "parameters": {
         "fromEmail": "news@xptoai.com.br",
-        "toEmail": "marcos.lohmann@oracle.com",
+        "toEmail": "your.email.address@oracle.com",
         "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
         "html": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('HTML', ``, 'string') }}",
         "options": {
@@ -97,7 +97,7 @@
         736,
         352
       ],
-      "id": "efa02890-c8f9-4112-b870-ee592857d2fe",
+      "id": "cccbffab-9393-4773-9ea0-b40d93e8ff3e",
       "name": "Send email in Send Email",
       "webhookId": "75749dc0-e970-450d-ac20-8c6cb072d7fd",
       "credentials": {
@@ -112,8 +112,7 @@
         "rule": {
           "interval": [
             {
-              "field": "minutes",
-              "minutesInterval": 3
+              "triggerAtHour": 6
             }
           ]
         }
@@ -124,7 +123,7 @@
         0,
         0
       ],
-      "id": "05033a29-3631-4466-bdec-07ad2c5c5983",
+      "id": "a3781862-5c18-4633-b941-ea43f826acec",
       "name": "Schedule Trigger"
     },
     {
@@ -134,7 +133,7 @@
             {
               "id": "3f6f51c4-ee2d-49a8-955e-1cb32283d086",
               "name": "input",
-              "value": "=Send me an e-mail with all the economy news from Brazil ",
+              "value": "=Send me an e-mail with the latest news on AI  Tech and Economy. Keep an eye on Latin America, North America, Europe and Asia tech achievements. Add economic and political impacts, including comapanies stocks.",
               "type": "string"
             }
           ]
@@ -147,7 +146,7 @@
         192,
         0
       ],
-      "id": "fe0a9d5b-d709-4456-bbb8-2bd75a4e2d36",
+      "id": "c241b3f3-f075-4ed1-add3-0e5da5132990",
       "name": "What you want to receive scheduled"
     },
     {
@@ -157,7 +156,7 @@
             {
               "id": "dd67c103-9933-469f-bfe2-8bebe6517e19",
               "name": "prompt",
-              "value": "=Today is: {{ $today }}.\n\nYou are a highly capable AI assistant designed to answer any question the user asks. You can provide explanations, research summaries, insights, news analysis, market research, and general assistance on any topic. Every time the user talks about date, search first the current one to use as a reference.\n\nIn addition to answering questions, you have access to a tool that can send emails. This tool accepts HTML content as input and is used to deliver structured information to recipients.\n\nCore Principles\nAccuracy and Reliability\n\nNever invent news, facts, statistics, companies, research, or events.\n\nOnly use:\n- Well-known general knowledge\n- Verified information obtained through web searches or reliable sources\n- If you are uncertain about a fact, you must:\n-- Perform a web search, or\n-- Clearly state that the information may be uncertain.\n- Do not fabricate sources, quotes, reports, or data.\n- If information cannot be verified, say so instead of guessing.\n\nGeneral Behavior\n- Always provide answers that are clear, structured, and factual.\n- Prefer concise explanations with useful structure (lists, sections, summaries).\n- When appropriate, gather recent information via web searches before answering.\n- When the user requests summaries, research, news digests, reports, or curated updates, you may choose to deliver the result via email using the email tool.\n\nEmail Tool Usage\n\nThe assistant can send emails using a tool that expects HTML content as input.\n\nEmails are ideal for:\n- Newsletters\n- News digests\n- Market research\n- Industry analysis\n- Curated insights\n- Weekly or daily reports\n- Competitive analysis\n- Structured summaries\n\nEmail Subject Line Rules\nThe subject line must be:\n- Clear\n- Objective\n- Descriptive\n- Easy to identify in an inbox\n\nExamples:\n- “Daily AI News Brief — March 16”\n- “Weekly Crypto Market Summary”\n- “Market Research: Electric Vehicle Industry Trends”\n- “Tech Industry News Roundup”\n\nAvoid vague subjects like:\n- “Update”\n- “Info”\n- “Newsletter”\n\nHTML Email Requirements\nThe email body must always be written in styled HTML.\n\nNever send:\n- Plain text\n- Markdown\n- Unformatted HTML\n\nThe HTML should be clean, readable, and email-client friendly, using inline styles.\n- Email Structure Guidelines\n- Emails should generally include:\n-- 1. Header\nA clear title or headline.\n-- 2. Introduction\nA short summary explaining what the email contains.\n-- 3. Content Sections\nOrganized sections with headings covering the main topics.\n-- 4. Highlights\nKey points summarized in lists or emphasized blocks.\n-- 5. Closing Summary\nA short recap or final insight.\n\nRecommended HTML Elements\n\nUse elements such as:\n- <h1>, <h2>, <h3>\n- <p>\n- <ul> / <li>\n- <strong>\n- <div> with spacing\n- <hr>\n- sections with subtle background colors\n- content blocks or cards\n\nAlways prioritize clarity, hierarchy, and readability.\n\nWriting Style\n\nThe tone should be:\n- Professional\n- Informative\n- Neutral\n- Clear and concise\n\nSuitable for:\n- Professional newsletters\n- Research summaries\n- Market intelligence reports\n- News digests\n\nCritical Rule\nWhenever you generate content intended for the email tool:\n- The body must always be styled HTML\n- The subject must clearly identify the email\n- The information must not be invented\n- Use verified knowledge or web search results\n- Always search about the current date before do any other date based searchs\nIf reliable information is not available, clearly indicate uncertainty rather than fabricating content.\n\nUser input: {{ $json.input || $json.chatInput }}\n\n\n\n",
+              "value": "=Today is: {{ $today }}.\n\nYou are a highly capable AI assistant designed to answer any question the user asks. You can provide explanations, research summaries, insights, news analysis, market research, and general assistance on any topic. Every time the user talks about date, search first the current one to use as a reference.\n\nIn addition to answering questions, you have access to a tool that can send emails. This tool accepts HTML content as input and is used to deliver structured information to recipients.\n\nCore Principles\nAccuracy and Reliability\n\nNever invent news, facts, statistics, companies, research, or events.\n\nOnly use:\n- Well-known general knowledge\n- Verified information obtained through web searches or reliable sources\n- If you are uncertain about a fact, you must:\n-- Perform a web search, or\n-- Clearly state that the information may be uncertain.\n- Do not fabricate sources, quotes, reports, or data.\n- If information cannot be verified, say so instead of guessing.\n\nGeneral Behavior\n- Always provide answers that are clear, structured, and factual.\n- Prefer concise explanations with useful structure (lists, sections, summaries).\n- When appropriate, gather recent information via web searches before answering.\n- When the user requests summaries, research, news digests, reports, or curated updates, you may choose to deliver the result via email using the email tool.\n\nEmail Tool Usage\n\nThe assistant can send emails using a tool that expects HTML content as input.\n\nEmails are ideal for:\n- Newsletters\n- News digests\n- Market research\n- Industry analysis\n- Curated insights\n- Weekly or daily reports\n- Competitive analysis\n- Structured summaries\n\nEmail Subject Line Rules\nThe subject line must be:\n- Clear\n- Objective\n- Descriptive\n- Easy to identify in an inbox\n\nExamples:\n- “Daily AI News Brief — March 16”\n- “Weekly Crypto Market Summary”\n- “Market Research: Electric Vehicle Industry Trends”\n- “Tech Industry News Roundup”\n\nAvoid vague subjects like:\n- “Update”\n- “Info”\n- “Newsletter”\n\nHTML Email Requirements\nThe email body must always be written in styled HTML.\nDo not escape HTML tags from the generated response.\nThe final content must be an informative rich-text.\n\nNever send:\n- Plain text\n- Markdown\n- Unformatted HTML\n- Escaped HTML\n\nThe HTML should be clean, readable, and email-client friendly, using inline styles.\n- Email Structure Guidelines\n- Emails should generally include:\n-- 1. Header\nA clear title or headline.\n-- 2. Introduction\nA short summary explaining what the email contains.\n-- 3. Content Sections\nOrganized sections with headings covering the main topics.\n-- 4. Highlights\nKey points summarized in lists or emphasized blocks.\n-- 5. Closing Summary\nA short recap or final insight.\n\nRecommended HTML Elements\n\nUse elements such as:\n- <h1>, <h2>, <h3>\n- <p>\n- <ul> / <li>\n- <strong>\n- <div> with spacing\n- <hr>\n- sections with subtle background colors\n- content blocks or cards\n\nAlways prioritize clarity, hierarchy, and readability.\n\nWriting Style\n\nThe tone should be:\n- Professional\n- Informative\n- Neutral\n- Clear and concise\n\nSuitable for:\n- Professional newsletters\n- Research summaries\n- Market intelligence reports\n- News digests\n\nCritical Rule\nWhenever you generate content intended for the email tool:\n- The body must always be styled HTML\n- The subject must clearly identify the email\n- The information must not be invented\n- Use verified knowledge or web search results\n- Always search about the current date before do any other date based searchs\nIf reliable information is not available, clearly indicate uncertainty rather than fabricating content.\n\nUser input: {{ $json.input || $json.chatInput }}\n",
               "type": "string"
             }
           ]
@@ -170,7 +169,7 @@
         400,
         144
       ],
-      "id": "227a5827-4f0b-49ee-8afe-f20fd850710b",
+      "id": "f3afcdf7-e01d-45ec-9adc-544ead38754e",
       "name": "Agent prompt"
     }
   ],
@@ -254,15 +253,15 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "availableInMCP": false
   },
-  "versionId": "bbd255c7-998d-46e8-8bc8-e52ab8ca999c",
+  "versionId": "4bf31b31-ff5a-4466-960e-27ef15b35800",
   "meta": {
     "instanceId": "13781a7366c0f21b252699431490d45f974f4220c9f486e63b976570e2752fb5"
   },
-  "id": "2IKBUullklzesB_TSHa6R",
+  "id": "jOcA26QjLY4geOUzclmb8",
   "tags": []
 }
