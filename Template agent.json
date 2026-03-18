@@ -99,7 +99,7 @@
       ],
       "id": "cccbffab-9393-4773-9ea0-b40d93e8ff3e",
       "name": "Send email in Send Email",
-      "webhookId": "75749dc0-e970-450d-ac20-8c6cb072d7fd",
+      "webhookId": "",
       "credentials": {
         "smtp": {
           "id": "wHf1LoxpQ8qfRp3W",
