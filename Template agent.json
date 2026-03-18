@@ -19,7 +19,7 @@
       ],
       "id": "731cb705-13c7-47d9-8e80-fc2fd3a6c691",
       "name": "When chat message received",
-      "webhookId": "c73bb9e2-fdf6-4d41-bacb-ee57134d71b5"
+      "webhookId": ""
     },
     {
       "parameters": {
